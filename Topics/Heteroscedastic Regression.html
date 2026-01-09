@@ -13184,77 +13184,7 @@ div#notebook {
 <main>
 <div class="border-box-sizing" id="notebook" tabindex="-1">
 <div class="container" id="notebook-container">
-<div class="cell border-box-sizing code_cell rendered celltag_hide-code" id="cell-id=f65cf58e">
-<div class="input">
-<div class="prompt input_prompt">In [18]:</div>
-<div class="inner_cell">
-<div class="input_area">
-<div class="highlight hl-r"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">htmltools</span><span class="p">)</span>
-<span class="nf">library</span><span class="p">(</span><span class="n">IRdisplay</span><span class="p">)</span>
-
-<span class="n">IRdisplay</span><span class="o">::</span><span class="nf">display_html</span><span class="p">(</span><span class="nf">HTML</span><span class="p">(</span><span class="s">"</span>
-<span class="s">&lt;style&gt;</span>
-<span class="s">.simulation-box {</span>
-<span class="s">  border-left: 6px solid #c0392b;</span>
-<span class="s">  background: linear-gradient(135deg, #fff5f5, #ffffff);</span>
-<span class="s">  padding: 18px 22px;</span>
-<span class="s">  margin-bottom: 24px;</span>
-<span class="s">  border-radius: 6px;</span>
-<span class="s">  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;</span>
-<span class="s">}</span>
-
-<span class="s">.simulation-title {</span>
-<span class="s">  font-size: 1.6em;</span>
-<span class="s">  font-weight: 600;</span>
-<span class="s">  margin-bottom: 8px;</span>
-<span class="s">  color: #2c2c2c;</span>
-<span class="s">}</span>
-
-<span class="s">.simulation-meta {</span>
-<span class="s">  font-size: 0.95em;</span>
-<span class="s">  color: #555;</span>
-<span class="s">  margin-bottom: 12px;</span>
-<span class="s">}</span>
-
-<span class="s">.simulation-meta span {</span>
-<span class="s">  margin-right: 12px;</span>
-<span class="s">}</span>
-
-<span class="s">.simulation-section {</span>
-<span class="s">  margin-top: 10px;</span>
-<span class="s">  font-size: 1.02em;</span>
-<span class="s">  color: #333;</span>
-<span class="s">}</span>
-
-<span class="s">.deps-box {</span>
-<span class="s">  border-left: 6px solid #1f4fd8;</span>
-<span class="s">  background: linear-gradient(135deg, #f4f7ff, #ffffff);</span>
-<span class="s">  padding: 16px 20px;</span>
-<span class="s">  margin: 20px 0;</span>
-<span class="s">  border-radius: 6px;</span>
-<span class="s">  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;</span>
-<span class="s">}</span>
-
-<span class="s">.deps-title {</span>
-<span class="s">  font-weight: 600;</span>
-<span class="s">  font-size: 1.1em;</span>
-<span class="s">  margin-bottom: 8px;</span>
-<span class="s">  color: #1f4fd8;</span>
-<span class="s">}</span>
-
-<span class="s">.deps-code {</span>
-<span class="s">  background-color: #f0f2f5;</span>
-<span class="s">  padding: 10px 12px;</span>
-<span class="s">  border-radius: 4px;</span>
-<span class="s">  font-family: ui-monospace, Menlo, Consolas, monospace;</span>
-<span class="s">  font-size: 0.95em;</span>
-<span class="s">}</span>
-<span class="s">&lt;/style&gt;</span>
-<span class="s">"</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-</div>
+<div class="cell border-box-sizing code_cell rendered celltag_hide-input" id="cell-id=f65cf58e">
 <div class="output_wrapper">
 <div class="output">
 <div class="output_area">
@@ -13322,49 +13252,7 @@ div#notebook {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered celltag_hide-code" id="cell-id=7ee92088">
-<div class="input">
-<div class="prompt input_prompt">In [17]:</div>
-<div class="inner_cell">
-<div class="input_area">
-<div class="highlight hl-r"><pre><span></span><span class="n">IRdisplay</span><span class="o">::</span><span class="nf">display_html</span><span class="p">(</span><span class="nf">HTML</span><span class="p">(</span><span class="s">"</span>
-<span class="s">&lt;div class='simulation-box'&gt;</span>
-
-<span class="s">  &lt;div class='simulation-title'&gt;</span>
-<span class="s">    Regressão Heteroscedástica com Redes Neurais</span>
-<span class="s">  &lt;/div&gt;</span>
-
-<span class="s">  &lt;div class='simulation-meta'&gt;</span>
-<span class="s">    &lt;span&gt;&lt;b&gt;Linguagem:&lt;/b&gt; R&lt;/span&gt;</span>
-<span class="s">    &lt;span&gt;&lt;b&gt;Framework:&lt;/b&gt; torch&lt;/span&gt;</span>
-<span class="s">    &lt;span&gt;&lt;b&gt;Ambiente:&lt;/b&gt; Jupyter Notebook&lt;/span&gt;</span>
-<span class="s">  &lt;/div&gt;</span>
-
-<span class="s">  &lt;div class='simulation-section'&gt;</span>
-<span class="s">    &lt;b&gt;Objetivo&lt;/b&gt;</span>
-<span class="s">    &lt;p&gt;</span>
-<span class="s">      Demonstrar a aprendizagem simultânea da média condicional</span>
-<span class="s">      &lt;i&gt;f(x)&lt;/i&gt; e da variância condicional</span>
-<span class="s">      &lt;i&gt;σ²(x)&lt;/i&gt; em um problema de regressão heteroscedástica.</span>
-<span class="s">    &lt;/p&gt;</span>
-<span class="s">  &lt;/div&gt;</span>
-
-<span class="s">  &lt;div class='simulation-section'&gt;</span>
-<span class="s">    &lt;b&gt;Características do experimento&lt;/b&gt;</span>
-<span class="s">    &lt;ul&gt;</span>
-<span class="s">      &lt;li&gt;Dados sintéticos com ruído dependente da entrada&lt;/li&gt;</span>
-<span class="s">      &lt;li&gt;Rede neural com duas saídas: μ(x) e σ²(x)&lt;/li&gt;</span>
-<span class="s">      &lt;li&gt;Função de custo baseada em log-verossimilhança Gaussiana&lt;/li&gt;</span>
-<span class="s">      &lt;li&gt;Visualização dinâmica do treinamento e geração de GIF&lt;/li&gt;</span>
-<span class="s">    &lt;/ul&gt;</span>
-<span class="s">  &lt;/div&gt;</span>
-
-<span class="s">&lt;/div&gt;</span>
-<span class="s">"</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-</div>
+<div class="cell border-box-sizing code_cell rendered celltag_hide-input" id="cell-id=7ee92088">
 <div class="output_wrapper">
 <div class="output">
 <div class="output_area">
@@ -13402,35 +13290,7 @@ div#notebook {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered" id="cell-id=9d709432">
-<div class="input">
-<div class="prompt input_prompt">In [20]:</div>
-<div class="inner_cell">
-<div class="input_area">
-<div class="highlight hl-r"><pre><span></span><span class="n">IRdisplay</span><span class="o">::</span><span class="nf">display_html</span><span class="p">(</span><span class="nf">HTML</span><span class="p">(</span><span class="s">"</span>
-<span class="s">&lt;div class='deps-box'&gt;</span>
-<span class="s">  &lt;div class='deps-title'&gt;Kernel R + dependências necessárias&lt;/div&gt;</span>
-
-<span class="s">  &lt;p style='margin-bottom:8px; font-size:0.95em; color:#333;'&gt;</span>
-<span class="s">    Este notebook utiliza um &lt;b&gt;kernel R&lt;/b&gt; com as seguintes bibliotecas instaladas:</span>
-<span class="s">  &lt;/p&gt;</span>
-
-<span class="s">  &lt;div class='deps-code'&gt;</span>
-<span class="s">&lt;pre&gt;</span>
-<span class="s">install.packages(c(</span>
-<span class="s">  \"IRdisplay\",</span>
-<span class="s">  \"ggplot2\",</span>
-<span class="s">  \"patchwork\",</span>
-<span class="s">  \"gifski\"</span>
-<span class="s">))</span>
-<span class="s">&lt;/pre&gt;</span>
-<span class="s">  &lt;/div&gt;</span>
-<span class="s">&lt;/div&gt;</span>
-<span class="s">"</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-</div>
+<div class="cell border-box-sizing code_cell rendered celltag_hide-input" id="cell-id=9d709432">
 <div class="output_wrapper">
 <div class="output">
 <div class="output_area">
