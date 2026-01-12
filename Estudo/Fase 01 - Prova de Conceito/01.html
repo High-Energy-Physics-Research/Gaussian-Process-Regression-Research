@@ -13189,161 +13189,23 @@ div#notebook {
 <main>
 <div class="border-box-sizing" id="notebook" tabindex="-1">
 <div class="container" id="notebook-container">
-<div class="cell border-box-sizing text_cell rendered" id="cell-id=7bab28af"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<div style="
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  line-height: 1.6;
-  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-  color: #f5f7fa;
-  padding: 28px;
-  border-radius: 14px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
-  max-width: 1000px;
-">
-</div>
-<h1 style="margin-top: 0; font-size: 2.2em;">
-    Dataset Description
-  </h1>
-<h2 style="margin-top: 0.2em; font-weight: 400; color: #c7d9e5;">
-    Pb–Pb Collisions at √s<sub>NN</sub> = 5.02 TeV
-  </h2>
-<hr style="border: none; border-top: 1px solid rgba(255,255,255,0.25); margin: 20px 0;"/>
-<p style="margin-top: 18px; font-style: italic; color: #cde6f5;">
-    This dataset serves as a benchmark example for studying Gaussian Process regression
-    under different noise correlation hypotheses, prior to extending the analysis to
-    high-dimensional emulators.
-  </p>
-<hr style="border: none; border-top: 1px solid rgba(255,255,255,0.25); margin: 20px 0;"/>
-<div style="
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-  color: #f5f7fa;
-  padding: 22px 26px;
-  border-radius: 14px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
-  max-width: 1100px;
-">
-</div>
-<h3>Experiment</h3>
-<ul>
-<li><b>Accelerator:</b> Large Hadron Collider (LHC), CERN</li>
-<li><b>Experiment:</b> ALICE</li>
-<li><b>Collision system:</b> Pb–Pb</li>
-<li><b>Center-of-mass energy:</b> √s<sub>NN</sub> = 5.02 TeV</li>
-<li><b>Final state:</b> Charged particles</li>
-</ul>
-<h3>Observable</h3>
-<ul>
-<li><b>Measured quantity:</b> <i>v</i><sub>0</sub>(p<sub>T</sub>)</li>
-<li><b>Independent variable:</b> Transverse momentum p<sub>T</sub> [GeV]</li>
-<li><b>p<sub>T</sub> range:</b> 0.55 – 9.46 GeV</li>
-<li>
-<b>Physical interpretation:</b>
-      Isotropic component of the azimuthal distribution,
-      sensitive to collective and radial flow effects.
-    </li>
-</ul>
-<h3>Event Selection</h3>
-<ul>
-<li><b>Centrality class:</b> 50–60% (semi-peripheral)</li>
-<li><b>Reference p<sub>T</sub>:</b> 0.5 – 2 GeV</li>
-<li><b>Pseudorapidity gap:</b> |η| = 1</li>
-</ul>
-<h3>Data Source</h3>
-<ul>
-<li><b>Repository:</b> HEPData</li>
-<li><b>Table DOI:</b> 10.17182/hepdata.158359.v1/t20</li>
-<li><b>Original figure:</b> Figure 4 (panel a)</li>
-<li><b>CSV file:</b> HEPData-ins2907010-v1-Figure_4a_cent7.csv</li>
-</ul>
-<h3>CSV Structure</h3>
-<table style="
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
-    background: rgba(255,255,255,0.05);
-  ">
-<thead>
-<tr>
-<th style="border-bottom: 1px solid rgba(255,255,255,0.3); padding: 8px;">Column</th>
-<th style="border-bottom: 1px solid rgba(255,255,255,0.3); padding: 8px;">Quantity</th>
-<th style="border-bottom: 1px solid rgba(255,255,255,0.3); padding: 8px;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr><td>1</td><td>p<sub>T</sub></td><td>Bin center [GeV]</td></tr>
-<tr><td>2</td><td>v<sub>0</sub>(p<sub>T</sub>)</td><td>Measured value</td></tr>
-<tr><td>3</td><td>stat +</td><td>Positive statistical uncertainty</td></tr>
-<tr><td>4</td><td>stat −</td><td>Negative statistical uncertainty</td></tr>
-<tr><td>5</td><td>syst +</td><td>Positive systematic uncertainty</td></tr>
-<tr><td>6</td><td>syst −</td><td>Negative systematic uncertainty</td></tr>
-</tbody>
-</table>
-<p>
-<i><strong>Note</strong>: Statistical uncertainties are treated as independent (i.i.d.) across p<sub>T</sub> bins,
-    while systematic uncertainties are assumed to be potentially correlated and are
-    explicitly modeled through a non-diagonal covariance matrix.</i>
-</p>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered" id="cell-id=735a16f6">
-<div class="input">
-<div class="prompt input_prompt">In [18]:</div>
-<div class="inner_cell">
-<div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">HTML</span><span class="p">,</span> <span class="n">display</span>
-
-<span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="s2">"""</span>
-<span class="s2">&lt;div style="background:#0f2027; color:#f5f7fa; padding:20px; border-radius:12px;"&gt;</span>
-<span class="s2">  &lt;h2&gt;📊 Dataset Overview — Pb–Pb at √s&lt;sub&gt;NN&lt;/sub&gt; = 5.02 TeV&lt;/h2&gt;</span>
-
-<span class="s2">  &lt;table style="width:100%; border-collapse:collapse;"&gt;</span>
-<span class="s2">    &lt;tr&gt;</span>
-<span class="s2">      &lt;td style="vertical-align:top; padding-right:20px;"&gt;</span>
-<span class="s2">        &lt;b&gt;Experiment&lt;/b&gt;&lt;br&gt;</span>
-<span class="s2">        LHC (CERN)&lt;br&gt;</span>
-<span class="s2">        ALICE&lt;br&gt;</span>
-<span class="s2">        Pb–Pb&lt;br&gt;</span>
-<span class="s2">        √s&lt;sub&gt;NN&lt;/sub&gt; = 5.02 TeV&lt;br&gt;</span>
-<span class="s2">        Charged particles</span>
-<span class="s2">      &lt;/td&gt;</span>
-
-<span class="s2">      &lt;td style="vertical-align:top;"&gt;</span>
-<span class="s2">        &lt;b&gt;Observable&lt;/b&gt;&lt;br&gt;</span>
-<span class="s2">        v&lt;sub&gt;0&lt;/sub&gt;(p&lt;sub&gt;T&lt;/sub&gt;)&lt;br&gt;</span>
-<span class="s2">        p&lt;sub&gt;T&lt;/sub&gt; ∈ [0.55, 9.46] GeV&lt;br&gt;&lt;br&gt;</span>
-
-<span class="s2">        &lt;b&gt;Centrality&lt;/b&gt;&lt;br&gt;</span>
-<span class="s2">        50–60%&lt;br&gt;&lt;br&gt;</span>
-
-<span class="s2">        &lt;b&gt;Data&lt;/b&gt;&lt;br&gt;</span>
-<span class="s2">        &lt;a href="https://doi.org/10.17182/hepdata.158359.v1/t20"</span>
-<span class="s2">           target="_blank"</span>
-<span class="s2">           style="color:#9ad1ff;"&gt;</span>
-<span class="s2">           HEPData DOI</span>
-<span class="s2">        &lt;/a&gt;</span>
-<span class="s2">      &lt;/td&gt;</span>
-<span class="s2">    &lt;/tr&gt;</span>
-<span class="s2">  &lt;/table&gt;</span>
-<span class="s2">&lt;/div&gt;</span>
-<span class="s2">"""</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-</div>
+<div class="cell border-box-sizing code_cell rendered celltag_hide-input" id="cell-id=735a16f6">
 <div class="output_wrapper">
 <div class="output">
 <div class="output_area">
 <div class="prompt"></div>
 <div class="output_html rendered_html output_subarea">
-<div style="background:#0f2027; color:#f5f7fa; padding:20px; border-radius:12px;">
-<h2>📊 Dataset Overview — Pb–Pb at √s<sub>NN</sub> = 5.02 TeV</h2>
-<table style="width:100%; border-collapse:collapse;">
+<div style="
+  background:#0f2027;
+  color:#f5f7fa;
+  padding:20px;
+  border-radius:12px;
+  text-align:left;
+">
+<h2>Dataset Overview — Pb–Pb at √s<sub>NN</sub> = 5.02 TeV</h2>
+<table style="width:100%; border-collapse:collapse; margin:0 auto;">
 <tr>
-<td style="vertical-align:top; padding-right:20px;">
+<td style="vertical-align:top; padding-right:20px; text-align:left;">
 <b>Experiment</b><br/>
         LHC (CERN)<br/>
         ALICE<br/>
@@ -13351,12 +13213,14 @@ div#notebook {
         √s<sub>NN</sub> = 5.02 TeV<br/>
         Charged particles
       </td>
-<td style="vertical-align:top;">
+<td style="vertical-align:top; text-align:left;">
 <b>Observable</b><br/>
         v<sub>0</sub>(p<sub>T</sub>)<br/>
         p<sub>T</sub> ∈ [0.55, 9.46] GeV<br/><br/>
 <b>Centrality</b><br/>
         50–60%<br/><br/>
+</td>
+<td style="vertical-align:top; text-align:left;">
 <b>Data</b><br/>
 <a href="https://doi.org/10.17182/hepdata.158359.v1/t20" style="color:#9ad1ff;" target="_blank">
            HEPData DOI
