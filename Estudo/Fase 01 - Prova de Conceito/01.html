@@ -13207,175 +13207,34 @@ div#notebook {
             max-width: 1200px;
             margin: 24px auto;
         }
+
+        /* Faz o output ocupar toda a largura */
+        div.output_area {
+            display: block !important;
+        }
+
+        /* Remove o limite interno */
+        div.output_html.rendered_html {
+            max-width: 100% !important;
+            width: 100% !important;
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+        }
+
+        /* Centraliza qualquer card interno */
+        .fullwidth-center {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
         </style>
 </head>
 <body>
 <main>
 <div class="border-box-sizing" id="notebook" tabindex="-1">
 <div class="container" id="notebook-container">
-<div class="cell border-box-sizing code_cell rendered celltag_hide-input" id="cell-id=735a16f6">
-<div class="output_wrapper">
-<div class="output">
-<div class="output_area">
-<div class="prompt"></div>
-<div class="output_html rendered_html output_subarea">
-<div style="
-  background:#0f2027;
-  color:#f5f7fa;
-  padding:20px;
-  border-radius:12px;
-  text-align:left;
-">
-<h2>Dataset Overview — Pb–Pb at √s<sub>NN</sub> = 5.02 TeV</h2>
-<table style="width:100%; border-collapse:collapse; margin:0 auto;">
-<tr>
-<td style="vertical-align:top; padding-right:20px; text-align:left;">
-<b>Experiment</b><br/>
-        LHC (CERN)<br/>
-        ALICE<br/>
-        Pb–Pb<br/>
-        √s<sub>NN</sub> = 5.02 TeV<br/>
-        Charged particles
-      </td>
-<td style="vertical-align:top; text-align:left;">
-<b>Observable</b><br/>
-        v<sub>0</sub>(p<sub>T</sub>)<br/>
-        p<sub>T</sub> ∈ [0.55, 9.46] GeV<br/><br/>
-<b>Centrality</b><br/>
-        50–60%<br/><br/>
-</td>
-<td style="vertical-align:top; text-align:left;">
-<b>Data</b><br/>
-<a href="https://doi.org/10.17182/hepdata.158359.v1/t20" style="color:#9ad1ff;" target="_blank">
-           HEPData DOI
-        </a>
-</td>
-</tr>
-</table>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered" id="cell-id=56f91a51">
-<div class="input">
-<div class="prompt input_prompt">In [38]:</div>
-<div class="inner_cell">
-<div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">HTML</span><span class="p">,</span> <span class="n">display</span>
-
-<span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="sa">r</span><span class="s2">"""</span>
-<span class="s2">&lt;style&gt;</span>
-
-<span class="s2">/* ====== Card base (mesmo espírito do simulation-box) ====== */</span>
-<span class="s2">.simulation-box {</span>
-<span class="s2">  border-left: 6px solid #c0392b;</span>
-<span class="s2">  background: linear-gradient(135deg, #fff5f5, #ffffff);</span>
-<span class="s2">  padding: 18px 22px;</span>
-<span class="s2">  margin: 24px 0;</span>
-<span class="s2">  border-radius: 8px;</span>
-<span class="s2">  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;</span>
-<span class="s2">  box-shadow: 0 10px 22px rgba(0,0,0,0.08);</span>
-<span class="s2">}</span>
-
-<span class="s2">.simulation-title {</span>
-<span class="s2">  font-size: 1.6em;</span>
-<span class="s2">  font-weight: 650;</span>
-<span class="s2">  margin-bottom: 8px;</span>
-<span class="s2">  color: #2c2c2c;</span>
-<span class="s2">}</span>
-
-<span class="s2">.simulation-meta {</span>
-<span class="s2">  font-size: 0.95em;</span>
-<span class="s2">  color: #555;</span>
-<span class="s2">  margin-bottom: 12px;</span>
-<span class="s2">}</span>
-
-<span class="s2">.simulation-meta span { margin-right: 14px; }</span>
-
-<span class="s2">.simulation-section {</span>
-<span class="s2">  margin-top: 10px;</span>
-<span class="s2">  font-size: 1.02em;</span>
-<span class="s2">  color: #333;</span>
-<span class="s2">}</span>
-
-<span class="s2">/* ====== Dataset (tema escuro) ====== */</span>
-<span class="s2">.dataset-box {</span>
-<span class="s2">  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);</span>
-<span class="s2">  color: #f5f7fa;</span>
-<span class="s2">  padding: 22px 26px;</span>
-<span class="s2">  margin: 24px 0;</span>
-<span class="s2">  border-radius: 14px;</span>
-<span class="s2">  box-shadow: 0 10px 30px rgba(0,0,0,0.35);</span>
-<span class="s2">  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;</span>
-<span class="s2">}</span>
-
-<span class="s2">.dataset-title {</span>
-<span class="s2">  font-size: 1.9em;</span>
-<span class="s2">  font-weight: 650;</span>
-<span class="s2">  margin: 0 0 12px 0;</span>
-<span class="s2">}</span>
-
-<span class="s2">.dataset-grid {</span>
-<span class="s2">  display: grid;</span>
-<span class="s2">  grid-template-columns: 1fr 1fr;</span>
-<span class="s2">  gap: 28px;</span>
-<span class="s2">}</span>
-
-<span class="s2">.dataset-card {</span>
-<span class="s2">  background: rgba(255,255,255,0.06);</span>
-<span class="s2">  border-radius: 12px;</span>
-<span class="s2">  padding: 14px 16px;</span>
-<span class="s2">}</span>
-
-<span class="s2">.dataset-card-title {</span>
-<span class="s2">  font-weight: 700;</span>
-<span class="s2">  margin-bottom: 10px;</span>
-<span class="s2">}</span>
-
-<span class="s2">.dataset-row {</span>
-<span class="s2">  display: grid;</span>
-<span class="s2">  grid-template-columns: 140px 1fr;</span>
-<span class="s2">  row-gap: 6px;</span>
-<span class="s2">}</span>
-
-<span class="s2">.dataset-key { color: #cfe7f5; }</span>
-
-<span class="s2">.dataset-link {</span>
-<span class="s2">  color: #9ad1ff;</span>
-<span class="s2">  text-decoration: none;</span>
-<span class="s2">  border-bottom: 1px dotted rgba(154,209,255,0.6);</span>
-<span class="s2">}</span>
-
-<span class="s2">.dataset-footer {</span>
-<span class="s2">  margin-top: 14px;</span>
-<span class="s2">  font-size: 0.95em;</span>
-<span class="s2">  color: #cfe7f5;</span>
-<span class="s2">  display: flex;</span>
-<span class="s2">  justify-content: space-between;</span>
-<span class="s2">  flex-wrap: wrap;</span>
-<span class="s2">  gap: 10px;</span>
-<span class="s2">}</span>
-
-<span class="s2">/* ====== Opcional: centralizar outputs e remover prompts ======</span>
-<span class="s2">   (use só se você realmente quiser aplicar no notebook todo) */</span>
-
-<span class="s2">/*</span>
-<span class="s2">div.prompt { display: none !important; }</span>
-<span class="s2">div.output_area { width: 100% !important; margin-left: 0 !important; }</span>
-<span class="s2">div.output_area .output_subarea {</span>
-<span class="s2">  display: flex !important;</span>
-<span class="s2">  justify-content: center !important;</span>
-<span class="s2">}</span>
-<span class="s2">*/</span>
-
-<span class="s2">&lt;/style&gt;</span>
-<span class="s2">"""</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-</div>
+<div class="cell border-box-sizing code_cell rendered celltag_hide-input" id="cell-id=56f91a51">
 <div class="output_wrapper">
 <div class="output">
 <div class="output_area">
@@ -13491,55 +13350,7 @@ div.output_area .output_subarea {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered" id="cell-id=338877f0">
-<div class="input">
-<div class="prompt input_prompt">In [40]:</div>
-<div class="inner_cell">
-<div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="sa">r</span><span class="s2">"""</span>
-<span class="s2">&lt;div class="dataset-box"&gt;</span>
-<span class="s2">  &lt;div class="dataset-title"&gt;</span>
-<span class="s2">    Dataset Overview — Pb–Pb at √s&lt;sub&gt;NN&lt;/sub&gt; = 5.02 TeV</span>
-<span class="s2">  &lt;/div&gt;</span>
-
-<span class="s2">  &lt;div class="dataset-grid"&gt;</span>
-<span class="s2">    &lt;div class="dataset-card"&gt;</span>
-<span class="s2">      &lt;div class="dataset-card-title"&gt;Experiment&lt;/div&gt;</span>
-<span class="s2">      &lt;div class="dataset-row"&gt;</span>
-<span class="s2">        &lt;div class="dataset-key"&gt;Accelerator&lt;/div&gt;&lt;div&gt;LHC (CERN)&lt;/div&gt;</span>
-<span class="s2">        &lt;div class="dataset-key"&gt;Experiment&lt;/div&gt;&lt;div&gt;ALICE&lt;/div&gt;</span>
-<span class="s2">        &lt;div class="dataset-key"&gt;System&lt;/div&gt;&lt;div&gt;Pb–Pb&lt;/div&gt;</span>
-<span class="s2">        &lt;div class="dataset-key"&gt;Energy&lt;/div&gt;&lt;div&gt;√s&lt;sub&gt;NN&lt;/sub&gt; = 5.02 TeV&lt;/div&gt;</span>
-<span class="s2">        &lt;div class="dataset-key"&gt;Final state&lt;/div&gt;&lt;div&gt;Charged particles&lt;/div&gt;</span>
-<span class="s2">      &lt;/div&gt;</span>
-<span class="s2">    &lt;/div&gt;</span>
-
-<span class="s2">    &lt;div class="dataset-card"&gt;</span>
-<span class="s2">      &lt;div class="dataset-card-title"&gt;Observable &amp; Selection&lt;/div&gt;</span>
-<span class="s2">      &lt;div class="dataset-row"&gt;</span>
-<span class="s2">        &lt;div class="dataset-key"&gt;Observable&lt;/div&gt;&lt;div&gt;v&lt;sub&gt;0&lt;/sub&gt;(p&lt;sub&gt;T&lt;/sub&gt;)&lt;/div&gt;</span>
-<span class="s2">        &lt;div class="dataset-key"&gt;p&lt;sub&gt;T&lt;/sub&gt; range&lt;/div&gt;&lt;div&gt;0.55 – 9.46 GeV&lt;/div&gt;</span>
-<span class="s2">        &lt;div class="dataset-key"&gt;Centrality&lt;/div&gt;&lt;div&gt;50–60%&lt;/div&gt;</span>
-<span class="s2">        &lt;div class="dataset-key"&gt;Data&lt;/div&gt;</span>
-<span class="s2">        &lt;div&gt;</span>
-<span class="s2">          &lt;a class="dataset-link" href="https://doi.org/10.17182/hepdata.158359.v1/t20" target="_blank"&gt;</span>
-<span class="s2">            HEPData DOI</span>
-<span class="s2">          &lt;/a&gt;</span>
-<span class="s2">        &lt;/div&gt;</span>
-<span class="s2">      &lt;/div&gt;</span>
-<span class="s2">    &lt;/div&gt;</span>
-<span class="s2">  &lt;/div&gt;</span>
-
-<span class="s2">  &lt;div class="dataset-footer"&gt;</span>
-<span class="s2">    &lt;div&gt;&lt;b&gt;CSV:&lt;/b&gt; HEPData-ins2907010-v1-Figure_4a_cent7.csv&lt;/div&gt;</span>
-<span class="s2">    &lt;div&gt;&lt;b&gt;Source:&lt;/b&gt; HEPData (Table DOI)&lt;/div&gt;</span>
-<span class="s2">  &lt;/div&gt;</span>
-<span class="s2">&lt;/div&gt;</span>
-<span class="s2">"""</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-</div>
+<div class="cell border-box-sizing code_cell rendered celltag_hide-input" id="cell-id=338877f0">
 <div class="output_wrapper">
 <div class="output">
 <div class="output_area">
