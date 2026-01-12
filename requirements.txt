@@ -1,2 +1,4 @@
 ipykernel
 jupyter-matlab-proxy
+numpy
+matplotlib
